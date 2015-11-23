@@ -1,6 +1,6 @@
 OSM-PathFinder
 ==============
-_Nicolas Tortrat--Gentilhomme_ / _Nicolas Raymond_
+_Nicolas Tortrat--Gentilhomme_ / _Nicolas Raymond, 2014/2015_
 
 ![Preview](/images/Preview.jpg)
 
