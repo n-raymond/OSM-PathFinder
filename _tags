@@ -1,0 +1,11 @@
+
+
+true : package(str), package(xml-light), package(graphics), package(unix)
+true : package(camlimages.jpeg)
+true : package(camlimages.graphics)
+
+<src/util>          : include
+<src/commandLine>   : include
+<src/map>           : include
+<src/display>       : include
+<src/preprocessing> : include
