@@ -45,13 +45,20 @@ let set_basic_mode mode_flag str_mode mode cons =
 (** Filename : Represents the osm file which represents a map *)
 let filename = ref ""
 
-let set_filename f =
-  if Filename.check_suffix f ".osm" then
-    filename := f
+
+let set_name flag suffix filestring f  =
+  if Filename.check_suffix f suffix then
+    flag := f
   else
     invalid_option
       "Invalid filename"
-      "The filename must end with the extention .osm"
+      ("The " ^ filestring ^ " must end with the extention " ^ suffix ^ ".")
+
+let set_filename = set_name filename ".osm" "Open Street Map file name"
+
+
+
+
 
 
 
@@ -101,13 +108,16 @@ type graphicMode =
 
 let gmode = ref RoadMap
 
+let imagename = ref ""
+
 let set_gmode = set_basic_mode gmode_flag "display" gmode
 
 let set_gm_roadmap () =
   set_gmode RoadMap
 
-let set_gm_graphical () =
-  set_gmode Graphical
+let set_gm_graphical =
+  set_gmode Graphical;
+  set_name imagename ".jpg" "image name"
 
 
 (**	extrimityMode : Represents the two extrimity of the shortest way *)

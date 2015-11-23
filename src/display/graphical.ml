@@ -163,9 +163,9 @@ let display cost_type map itinerary start goal =
   Graphics.(rgb 24 71 165 |> set_color);
   draw_extrimity goal;
   Images.Rgb24 (Graphic_image.get_image 0 0 width height) |>
-    Jpeg.save "map.jpg" [];
+    Jpeg.save !Options.imagename [];
   print_endline "\x1b[32mDone !\x1b[0m";
-  print_endline "\x1b[36mItinerary saved in map.jpg !\x1b[0m"
+  print_endline ("\x1b[36mItinerary saved in " ^ !Options.imagename ^ " !\x1b[0m")
 
 
 

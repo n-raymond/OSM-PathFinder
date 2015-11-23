@@ -42,7 +42,7 @@ let rec generic_options = Arg.(align (List.flatten [
 
   options
     ["--graphic"; "-g"]
-    (Unit Options.set_gm_graphical)
+    (String Options.set_gm_graphical)
     " Display the route in graphical mode.";
 
   options
