@@ -20,7 +20,7 @@ let rmode_flag = ref false
 
 let gmode_flag = ref false
 
-let boils_flag = ref false
+let extrimity_flag = ref false
 
 let preprocessing_flag = ref false
 
@@ -110,15 +110,15 @@ let set_gm_graphical () =
   set_gmode Graphical
 
 
-(**	BoilsMode : Represents the two boils of the shortest way *)
-type boilsMode =
+(**	extrimityMode : Represents the two extrimity of the shortest way *)
+type extrimityMode =
 | Adresses of string * string
 | Coordinates of float * float * float * float
 | Nodes of string * string
 
-let boils = ref (Nodes ("", ""))
+let extrimity = ref (Nodes ("", ""))
 
-let boils_arg = ref []
+let extrimity_arg = ref []
 
 exception NotEnought
 
@@ -128,8 +128,8 @@ let incompatible_options () =
     "When option -P is defined, options -abcdgmnprt can't be used"
 
 let couple_of_list rest kind msg=
-  boils_arg := rest::!boils_arg;
-  match !boils_arg with
+  extrimity_arg := rest::!extrimity_arg;
+  match !extrimity_arg with
   | []      -> assert false (* By precondition *)
   | [a]     -> raise NotEnought
   | [a; b]  -> (b, a)
@@ -138,20 +138,20 @@ let couple_of_list rest kind msg=
 let start_end_points rest =
   couple_of_list rest "Invalid number of points" "Two points are required."
 
-let set_boils setter rest =
+let set_extrimity setter rest =
   if !preprocessing_flag then
     incompatible_options ()
   else
     setter rest
 
-let setter_boils_adresses rest =
+let setter_extrimity_adresses rest =
   try
     let (addr1, addr2) = start_end_points rest in
-    set_mode_flag boils_flag "route's boils";
-    boils := Adresses (addr1, addr2)
+    set_mode_flag extrimity_flag "route's extrimity";
+    extrimity := Adresses (addr1, addr2)
   with NotEnought -> ()
 
-let setter_boils_coordinates rest =
+let setter_extrimity_coordinates rest =
   let coord c =
     try
       match Str.(split (regexp "/") c) |> List.map float_of_string with
@@ -169,8 +169,8 @@ let setter_boils_coordinates rest =
     let (co1, co2) = start_end_points rest in
     let (c1lat, c1lon) = coord co1 in
     let (c2lat, c2lon) = coord co2 in
-    set_mode_flag boils_flag "route's boils";
-    boils := Coordinates (c1lat, c1lon, c2lat, c2lon)
+    set_mode_flag extrimity_flag "route's extrimity";
+    extrimity := Coordinates (c1lat, c1lon, c2lat, c2lon)
   with
   | NotEnought -> ()
   | Failure _ ->
@@ -178,28 +178,28 @@ let setter_boils_coordinates rest =
         "Invalid coordinate"
         "Latitude and longitude must be integers"
 
-let setter_boils_nodes rest =
+let setter_extrimity_nodes rest =
   try
     let (node1, node2) = start_end_points rest in
-    set_mode_flag boils_flag "route's boils";
-    boils := Nodes (node1, node2)
+    set_mode_flag extrimity_flag "route's extrimity";
+    extrimity := Nodes (node1, node2)
   with NotEnought -> ()
 
-let set_boils_adresses =
-  set_boils setter_boils_adresses
+let set_extrimity_adresses =
+  set_extrimity setter_extrimity_adresses
 
-let set_boils_coordinates =
-  set_boils setter_boils_coordinates
+let set_extrimity_coordinates =
+  set_extrimity setter_extrimity_coordinates
 
-let set_boils_nodes =
-  set_boils setter_boils_nodes
+let set_extrimity_nodes =
+  set_extrimity setter_extrimity_nodes
 
 
 
 (* Preprocessing operations *)
 
 let set_preprocessing_flag () =
-  if !boils_flag  || !vmode_flag || !rmode_flag || !gmode_flag then
+  if !extrimity_flag  || !vmode_flag || !rmode_flag || !gmode_flag then
     incompatible_options ()
   else
     preprocessing_flag:= true
@@ -209,7 +209,7 @@ let set_preprocessing_flag () =
 (* Command line checking *)
 
 let check_cmdline () =
-  if (not !boils_flag) &&(not !preprocessing_flag) then
+  if (not !extrimity_flag) && (not !preprocessing_flag) then
     invalid_option
       "Missing Option"
       "One of those options are expected : -a, -n, -c or -p."

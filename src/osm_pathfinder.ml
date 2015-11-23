@@ -20,7 +20,7 @@ let string_of_gmode gmode = match !gmode with
   | Options.RoadMap	-> "roadmap"
   | Options.Graphical -> "graphical"
 
-let string_of_boils boils= match !boils with
+let string_of_extrimity extrimity= match !extrimity with
   | Options.Adresses (s1, s2)	-> Printf.sprintf "adresses %s %s" s1 s2
   | Options.Coordinates	(i1, i2, i3, i4)->
     Printf.sprintf "coordinates %f/%f %f/%f" i1 i2 i3 i4
@@ -121,9 +121,9 @@ let nodes () =
       ()
   in
   Options.(
-    match !boils with
+    match !extrimity with
     | Adresses _ ->
-      failwith "TODO"
+      failwith "Functionality not implemented yet..."
     | Coordinates (latstart, lonstart, latgoal, longoal) ->
       check_bounds latstart lonstart mdata;
       check_bounds latgoal longoal mdata;
@@ -140,11 +140,6 @@ let nodes () =
       (MapData.NId n1, MapData.NId n2)
   )
 
-let (start, goal) =
-  print_string "Checking start and goal points ... ";
-  let res = nodes () in
-  print_endline "\x1b[32mDone !\x1b[0m";
-  res
 
 
 
@@ -152,14 +147,19 @@ let (start, goal) =
 
 let shortest_way () =
 
-  let itinerary () = MapItinerary.from_map start goal in
 
-  if !Options.preprocessing_flag then
-    print_string "Preprocessing !\n"
-
-  else
-    print_string "Calculating the itinerary ... ";
+  if not !Options.preprocessing_flag then begin
+    let (start, goal) =
+      print_string "Checking start and goal points ... ";
+      let res = nodes () in
+      print_endline "\x1b[32mDone !\x1b[0m";
+      res
+    in
+    let itinerary () =
+      MapItinerary.from_map start goal
+    in
     try
+      print_string "Calculating the itinerary ... ";
       let (cost, it) = itinerary () in
       print_endline "\x1b[32mDone !\x1b[0m";
 
@@ -174,6 +174,8 @@ let shortest_way () =
 
     with MapItinerary.Unattainable ->
       print_endline "\n \x1b[31m/!\\ No itinerary has been founded.\x1b[0m"
+  end else
+    print_string "Preprocessing : \x1b[32mDone !\x1b[0m\n"
 
 
 

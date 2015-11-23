@@ -11,7 +11,7 @@ let rec generic_options = Arg.(align (List.flatten [
     " Set which osm file need to be used.";
 
   options
-    ["--morized"; "-m"]
+    ["--motorized"; "-m"]
     (Unit Options.set_vm_motorized)
     " Set the route for motorized vehicles. (default)";
 
@@ -47,17 +47,17 @@ let rec generic_options = Arg.(align (List.flatten [
 
   options
     ["--nodes"; "-n"]
-    (Rest Options.set_boils_nodes)
+    (Rest Options.set_extrimity_nodes)
     " Define the starting and ending points with Open Street Map nodes.";
 
   options
     ["--addresses"; "-a"]
-    (Rest Options.set_boils_adresses)
+    (Rest Options.set_extrimity_adresses)
     " Define the starting and ending points with addresses.";
 
   options
     ["--coordinates"; "-c"]
-    (Rest Options.set_boils_coordinates)
+    (Rest Options.set_extrimity_coordinates)
     " Define the starting and ending points with coordinates in \
       latitude/longitide.";
 
@@ -85,7 +85,7 @@ let usage_msg =
   "osm_pathfinder [-b | -m | -p] [-t | -d] [-r | -g] -f <file.osm> -n \
   <nodeID1> <nodeID2>\n"
   ^
-  "osm_pathfinder -p -f <file.osm>\n"
+  "osm_pathfinder -P -f <file.osm>\n"
 
 let parse () =
   Arg.parse generic_options invalid_opt usage_msg
