@@ -115,9 +115,9 @@ let set_gmode = set_basic_mode gmode_flag "display" gmode
 let set_gm_roadmap () =
   set_gmode RoadMap
 
-let set_gm_graphical =
+let set_gm_graphical name =
   set_gmode Graphical;
-  set_name imagename ".jpg" "image name"
+  set_name imagename ".jpg" "image name" name
 
 
 (**	extrimityMode : Represents the two extrimity of the shortest way *)
