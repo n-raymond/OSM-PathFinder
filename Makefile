@@ -4,7 +4,7 @@
 ##########################
 
 COWORKERS = Tortrat-Raymond
-TARGET    = swom
+TARGET    = osm_pathfinder
 
 OCAMLBUILD = ocamlbuild -use-ocamlfind -use-menhir $(OCAMLBUILDFLAGS)
 
