@@ -76,14 +76,16 @@ let invalid_opt opt =
   )
 
 let usage_msg =
-  "\nswom [-b | -m | -p] [-t | -d] [-r | -g] -f file.osm -a address1 address2\n"
+  "\nosm_pathfinder [-b | -m | -p] [-t | -d] [-r | -g] -f <file.osm> -a \
+  <address1> <address2>\n"
   ^
-  "swom [-b | -m | -p] [-t | -d] [-r | -g] -f file.osm -c longitude1/latitude1 \
-  longitude2/latitude2\n"
+  "osm_pathfinder [-b | -m | -p] [-t | -d] [-r | -g] -f <file.osm> -c \
+  <longitude1/latitude1> <longitude2/latitude2>\n"
   ^
-  "swom [-b | -m | -p] [-t | -d] [-r | -g] -f file.osm -n nodeID1 nodeID2\n"
+  "osm_pathfinder [-b | -m | -p] [-t | -d] [-r | -g] -f <file.osm> -n \
+  <nodeID1> <nodeID2>\n"
   ^
-  "swom -p -f file.osm\n"
+  "osm_pathfinder -p -f <file.osm>\n"
 
 let parse () =
   Arg.parse generic_options invalid_opt usage_msg
