@@ -17,6 +17,7 @@ module Nearee = Make(
       let get_coord = function
         | `Inode (IntersectionNode co) -> co
         | `Pnode (PathNode (co,_)) -> co
+        | _ -> assert false (* By MapData *)
       in
       Roads.fold (fun nid (n, _) l -> (nid, get_coord n)::l) map []
 
