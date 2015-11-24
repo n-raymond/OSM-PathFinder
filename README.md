@@ -44,20 +44,36 @@ $ opam install ocaml
 
 ####Install packages
 ```
-$ opam install ocamlbuild
-$ opam install camlimages
-$ opam install xml-light
+$ opam install ocamlbuild camlimages xml-light
 ```
 
 ####Compile the project
-A simple `make` in the root of the project  will produce the runable `osm_pathfinder`
+A simple ` make ` in the root of the project  will produce the runable `osm_pathfinder`
 
 ####Generate documentation
-A ` make doc` will generate an ocamldoc documentation in the `doc` subdirectory.
+A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory.
 
 
 ## How to use it
 
+####Basics
+To compute an itinerary, OSM-PathFinder must at least be used with the following command line :
+```
+$ ./osm-pathfinder -f <map>.osm {starting and ending points}
+```
+where :
+ - option `-f` allows to select the OSM file (`<map>.osm`) to work with.
+ - _`{starting and ending points}`_ allows to select the starting and ending point of your itinerary.
+   These points could be defined of three different ways :
+   - `-n <nodeID1> <nodeID2>` where `nodeID1` and `nodeID2` are integers to directly select them from
+     OSM nodes with their field `id`.
+   - `-c <latitude1>/<longitude1> <latitude2>/<longitude2>` to select theme from coordinates in latitude
+     and longitude.
+   - `-a <address1> <address2>` to select theme from addresses. _(Not implemented yet)_
 
-
-
+######_Exemple :_
+```
+$ ./osm-pathfinder -f MapExemple/exemple.osm -c 48.6499/2.3648 48.6890/2.38233
+```
+will compute the itinerary on the map `MapExemple/exemple.osm` from the point of coordinates `48.6499/2.3648`
+to the point of coordinates `48.6890/2.38233`.
