@@ -48,7 +48,7 @@ $ opam install ocamlbuild camlimages xml-light
 ```
 
 ####Compile the project
-A simple ` make ` in the root of the project  will produce the runable `osm_pathfinder`
+A simple ` make ` in the root of the project  will produce the runnable `osm_pathfinder`
 
 ####Generate documentation
 A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory.
@@ -59,7 +59,7 @@ A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory
 ####Basics
 To compute an itinerary, OSM-PathFinder must at least be used with the following command line :
 ```
-$ ./osm-pathfinder -f <map>.osm {starting and ending points}
+$ ./osm_pathfinder -f <map>.osm {starting and ending points}
 ```
 where :
  - option `-f` allows to select the OSM file (`<map>.osm`) to work with.
@@ -73,7 +73,7 @@ where :
 
 ######_Exemple :_
 ```
-$ ./osm-pathfinder -f MapExemple/exemple.osm -c 48.6499/2.3648 48.6890/2.38233
+$ ./osm_pathfinder -f MapExemple/exemple.osm -c 48.6499/2.3648 48.6890/2.38233
 ```
 will compute the itinerary on the map `MapExemple/exemple.osm` from the point of coordinates `48.6499/2.3648`
 to the point of coordinates `48.6890/2.38233`.
@@ -81,7 +81,8 @@ to the point of coordinates `48.6890/2.38233`.
 ####Itinerary Settings :
 
 ######Set the vehicule :
-By setting the vehicule, OSM-PathFinder will compute the itinerary for the choosen vehicule. It can be :
+By setting the vehicule, OSM-PathFinder will compute the itinerary for the choosen vehicule.
+You can use :
  - `--motorized` or `-m` for a motorized vehicule (car / motocycle) itinerary. _(default)_
  - `--bicycle` or `-b` for a bicycle itinerary.
  - `--pedestrian` or `-p` for a pedestrian itinerary.
@@ -90,8 +91,36 @@ By setting the vehicule, OSM-PathFinder will compute the itinerary for the choos
 ######Set the kind of itinerary :
 Two kinds of itinerary are available :
  - `--distance` or `-d` will set the itinerary to be the shortest in distance. _(default)_
- - `--time` or `-t` will set the itinerary to be the shortest in time
+ - `--time` or `-t` will set the itinerary to be the shortest in time.
 
 ######Set the display output :
-`/* TODO */`
+The itinerary can be displayed in two formats :
+ - `--roadmap` or `-r` will print the itinerary as a roadmap, explaining you all the steps
+   to travrel through it. _(default)_
+ - `--graphical <image>.jpg` or `-g <image>.jpg` will draw the map, the itinerary and
+   will save the result in the image file `<image>.jpg`. The itinerary will be represented
+   by a red line, the starting point by a green point and the destination by a blue one. 
+
+
+####Preprocessing :
+The first time OSM-PathFinder will handle an OSM file, it will extracts his data in order to
+use it. Also, the first time you will use the `--graphical` option, it will draw the map from
+the data it has extracted.
+This first treatments can be quiet long due to the very large size of Open Street Map files, but
+they are only necessary once. The next times OSM-PathFinder will handle the same file, the processing
+must be very faster.
+
+The command line :
+```
+$ ./osm_pathfinder -P -f <map>.osm
+```
+will run all those pre-treatment separatly. It can be useful if you want to use the tool in a server
+application and reprocess the maps when they have been updated.
+
+
+
+
+
+ 
+
 
