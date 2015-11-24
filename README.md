@@ -113,7 +113,7 @@ use it. Also, the first time you will use the `--graphical` option, it will draw
 the data it has extracted.
 This first treatments can be quite long due to the very large size of OpenStreetMap files, but
 they are only necessary once. The next times OSM-PathFinder will handle the same file, the processing
-must be very faster.
+should be very faster.
 
 The command line :
 ```
