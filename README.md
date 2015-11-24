@@ -99,7 +99,7 @@ The itinerary can be displayed in two formats :
    to travrel through it. _(default)_
  - `--graphical <image>.jpg` or `-g <image>.jpg` will draw the map, the itinerary and
    will save the result in the image file `<image>.jpg`. The itinerary will be represented
-   by a red line, the starting point by a green point and the destination by a blue one. 
+   by a red line, the starting point by a green dot and the destination by a blue one. 
 
 
 ####Preprocessing :
