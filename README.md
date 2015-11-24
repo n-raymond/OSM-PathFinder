@@ -122,8 +122,31 @@ $ ./osm_pathfinder -P -f <map>.osm
 will run all those pre-treatments separatly. It can be useful if you want to use the tool in a server
 application and reprocess the maps when they have been updated.
 
+####Help :
+The command line :
+```
+$ ./osm_pathfinder -h
+```
+will prints you the usage of the programe.
+
+
 ##_Exemples :_
 
+####1. _RoadMap Generation_ :
+```
+$ ./osm_pathfinder --motorized --time --roadmap -f MapExemple/exemple.osm -c 48.6603/2.3774 48.6890/2.38233
+```
+will produce the following roadmap :
+
+[roadmap](/images/roadmap.jpg)
+
+####2. _JPEG File Generation_ :
+```
+$ ./osm_pathfinder --bicycle --distance --graphic myItinerary.jpg -f MapExemple/exemple.osm -c 48.6603/2.3774 48.6890/2.38233
+```
+will produce the file myItinerary.jpg with this picture :
+
+[myItinerary.jpg](/images/myItinerary.jpg)
 
 
 
