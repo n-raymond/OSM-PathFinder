@@ -32,7 +32,7 @@ The easiest way to install them is to use the OPAM package manager.
 $ sudo apt-get install opam
 ```
 ######On OSX
-Uses [homebrew](http://brew.sh/).
+Use [homebrew](http://brew.sh/).
 ```
 $ brew install opam
 ```
@@ -48,6 +48,15 @@ $ opam install ocamlbuild
 $ opam install camlimages
 $ opam install xml-light
 ```
+
+####Compile the project
+A simple `make` in the root of the project  will produce the runable `osm_pathfinder`
+
+####Generate documentation
+A ` make doc` will generate an ocamldoc documentation in the `doc` subdirectory.
+
+
+## How to use it
 
 
 
