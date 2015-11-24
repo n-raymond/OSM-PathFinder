@@ -111,7 +111,7 @@ The itinerary can be displayed in two formats :
 The first time OSM-PathFinder will handle an OSM file, it will extracts his data in order to
 use it. Also, the first time you will use the `--graphical` option, it will draw the map from
 the data it has extracted.
-This first treatments can be quiet long due to the very large size of Open Street Map files, but
+This first treatments can be quite long due to the very large size of OpenStreetMap files, but
 they are only necessary once. The next times OSM-PathFinder will handle the same file, the processing
 must be very faster.
 
