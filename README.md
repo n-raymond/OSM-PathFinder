@@ -8,7 +8,7 @@ _Nicolas Tortrat--Gentilhomme_ / _Nicolas Raymond, 2014/2015_
 ##About the software
 
 The OpenStreetMap PathFinder is a command line tool that allows you to compute itineraries
-for pedestrians, bycicles and motorized vehicules on maps from OpenStreetMap.
+for pedestrians, bicycles and motorized vehicules on maps from OpenStreetMap.
 
 It can extract data from OSM files and display the path you requested in two formats :
  - A graphical and visual format stored as a jpeg file.
@@ -77,3 +77,21 @@ $ ./osm-pathfinder -f MapExemple/exemple.osm -c 48.6499/2.3648 48.6890/2.38233
 ```
 will compute the itinerary on the map `MapExemple/exemple.osm` from the point of coordinates `48.6499/2.3648`
 to the point of coordinates `48.6890/2.38233`.
+
+####Itinerary Settings :
+
+######Set the vehicule :
+By setting the vehicule, OSM-PathFinder will compute the itinerary for the choosen vehicule. It can be :
+ - `--motorized` or `-m` for a motorized vehicule (car / motocycle) itinerary. _(default)_
+ - `--bicycle` or `-b` for a bicycle itinerary.
+ - `--pedestrian` or `-p` for a pedestrian itinerary.
+ 
+ 
+######Set the kind of itinerary :
+Two kinds of itinerary are available :
+ - `--distance` or `-d` will set the itinerary to be the smallest in distance. _(default)_
+ - `--time` or `-t` will set the itinerary to be the smallest in time
+
+######Set the display output :
+`/* TODO */`
+
