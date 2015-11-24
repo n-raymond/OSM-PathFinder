@@ -138,7 +138,7 @@ $ ./osm_pathfinder --motorized --time --roadmap -f MapExemple/exemple.osm -c 48.
 ```
 will produce the following roadmap :
 
-[roadmap](/images/roadmap.jpg)
+![roadmap](/images/roadmap.jpg)
 
 ####2. _JPEG File Generation_ :
 ```
@@ -146,7 +146,7 @@ $ ./osm_pathfinder --bicycle --distance --graphic myItinerary.jpg -f MapExemple/
 ```
 will produce the file myItinerary.jpg with this picture :
 
-[myItinerary.jpg](/images/myItinerary.jpg)
+![myItinerary](/images/myItinerary.jpg)
 
 
 
