@@ -52,7 +52,7 @@ because of the installation of XQuartz.
 The `lablgtk` and `camlimages` packages need a recent version of `gtk+`.
 ######On linux systems
 ```
-$ sudo apt-get install libgtk2.0-dev
+$ sudo apt-get install libgtk2.0-dev libjpeg-dev
 ```
 ######On OSX
 ```
