@@ -20,10 +20,10 @@ This project is a study work realized in team at _University Paris Diderot, Pari
 ##How to compile it
 
 OSM-PathFinder at least needs the `4.02.0` version of OCaml and uses different packages :
- - xml-light
- - lablgtk
- - camlimages 
- - ocamlbuild
+ - `xml-light`
+ - `lablgtk`
+ - `camlimages` 
+ - `ocamlbuild`
 
 The easiest way to install them is to use the OPAM package manager.
 
@@ -44,7 +44,7 @@ $ eval `opam config env`
 ```
 
 ####Instal GTK+
-The camlimages packages needs a recent version of gtk+.
+The `lablgtk` and `camlimages` packages need a recent version of `gtk+`.
 ######On linux systems
 ```
 $ brew install gtk+
@@ -61,7 +61,7 @@ $ opam install ocamlbuild lablgtk camlimages xml-light
 ```
 
 ####Compile the project
-A simple ` make ` in the root of the project  will produce the runnable `osm_pathfinder`
+A simple ` make ` in the root of the project will produce the runnable `osm_pathfinder`
 
 ####Generate documentation
 A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory.
