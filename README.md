@@ -76,7 +76,7 @@ A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory
 
 *_Note_* : The following exemples will use an OpenStreetMap file not included in this repo in order to keep
 it light. If you want to do some tests on the same file and use exactly the same commands, you might
-clone this [repo](https://github.com/PixelSpirit/MapExemple) at the root of the project.
+clone that [repo](https://github.com/PixelSpirit/MapExemple) at the root of the project.
 
 ####Basics
 To compute an itinerary, OSM-PathFinder must at least be used with the following command line :
