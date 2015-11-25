@@ -50,11 +50,12 @@ because of the installation of XQuartz.
 The `lablgtk` and `camlimages` packages need a recent version of `gtk+`.
 ######On linux systems
 ```
-$ brew install gtk+
+$ sudo apt-get install libgtk2.0-dev
 ```
 ######On OSX
 ```
-$ sudo apt-get install libgtk2.0-dev
+$ brew install gtk+
+
 ```
 
 
