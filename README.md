@@ -27,8 +27,7 @@ OSM-PathFinder at least needs the `4.02.0` version of OCaml and uses different p
 
 The easiest way to install them is to use the OPAM package manager.
 
-####Install OPAM
-This will install OPAM and OCaml.
+####Install Ocaml and OPAM
 ######On linux systems
 ```
 $ sudo apt-get install opam
@@ -38,10 +37,14 @@ $ eval `opam config env`
 ######On OSX
 Use [homebrew](http://brew.sh/).
 ```
+$ brew install Caskroom/cask/xquartz
+$ brew install ocaml --with-x11
 $ brew install opam
 $ opam init
 $ eval `opam config env`
 ```
+*_Note_*: You will probably have to reboot your computer after these commands
+because of the installation of XQuartz.
 
 ####Instal GTK+
 The `lablgtk` and `camlimages` packages need a recent version of `gtk+`.
@@ -69,8 +72,7 @@ A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory
 
 ## How to use it
 
-######_Note :_
-The following exemples will use an OpenStreetMap file not included in this repo in order to keep
+*_Note_* : The following exemples will use an OpenStreetMap file not included in this repo in order to keep
 it light. If you want to do some tests on the same file and use exactly the same commands, you might
 clone this [repo](https://github.com/PixelSpirit/MapExemple) at the root of the project.
 
