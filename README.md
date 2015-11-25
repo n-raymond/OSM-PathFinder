@@ -55,7 +55,6 @@ $ sudo apt-get install libgtk2.0-dev
 ######On OSX
 ```
 $ brew install gtk+
-
 ```
 
 
