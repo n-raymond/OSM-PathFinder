@@ -21,30 +21,43 @@ This project is a study work realized in team at _University Paris Diderot, Pari
 
 OSM-PathFinder at least needs the `4.02.0` version of OCaml and uses different packages :
  - xml-light
+ - lablgtk
  - camlimages 
  - ocamlbuild
 
 The easiest way to install them is to use the OPAM package manager.
 
 ####Install OPAM
+This will install OPAM and OCaml.
 ######On linux systems
 ```
 $ sudo apt-get install opam
+$ opam init
+$ eval `opam config env`
 ```
 ######On OSX
 Use [homebrew](http://brew.sh/).
 ```
 $ brew install opam
+$ opam init
+$ eval `opam config env`
 ```
 
-####Install OCaml
+####Instal GTK+
+The camlimages packages needs a recent version of gtk+.
+######On linux systems
 ```
-$ opam install ocaml
+$ brew install gtk+
 ```
+######On OSX
+```
+$ sudo apt-get install libgtk2.0-dev
+```
+
 
 ####Install packages
 ```
-$ opam install ocamlbuild camlimages xml-light
+$ opam install ocamlbuild lablgtk camlimages xml-light
 ```
 
 ####Compile the project
