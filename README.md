@@ -1,20 +1,22 @@
 OSM-PathFinder
 ==============
-_Nicolas Tortrat--Gentilhomme_ / _Nicolas Raymond, 2014/2015_
+_Nicolas Raymond / Nicolas Tortrat--Gentilhomme, 2014/2015_
 
 ![Preview](/images/Preview.jpg)
 
 
 ##About the software
 
-The OpenStreetMap PathFinder is a command line tool that allows you to compute itineraries
-for pedestrians, bicycles and motorized vehicules on maps from [OpenStreetMap.org](https://www.openstreetmap.org/).
+The OpenStreetMap-PathFinder is a command line tool that allows you to compute itineraries
+for pedestrians, bicycles and motorized vehicules on maps coming from
+[OpenStreetMap.org](https://www.openstreetmap.org/).
 
-It can extract data from OSM files and display the path which you have requested in two formats :
+OSM-Pathfinder can extract data from OSM files and display the path that you have requested
+in two different formats :
  - A graphical and visual format stored as a jpeg file.
  - A textual format that gives you a roadmap discribing your itinerary.
 
-This project is a study work realized in team at _University Paris Diderot, Paris 7_.
+This project is a study work realized by a team at the _University Paris Diderot, Paris 7_.
 
 
 ##How to compile it
@@ -101,7 +103,8 @@ to the point of coordinates `48.6890/2.38233`.
 ####Itinerary Settings :
 
 ######Set the vehicule :
-By setting the vehicule, OSM-PathFinder will compute the itinerary for the choosen vehicule.
+By setting the vehicule, OSM-PathFinder will compute the itinerary for the circulating form
+you have chosen.
 You can use :
  - `--motorized` or `-m` for a motorized vehicule (car / motocycle) itinerary. _(default)_
  - `--bicycle` or `-b` for a bicycle itinerary.
@@ -123,26 +126,26 @@ The itinerary can be displayed in two formats :
 
 
 ####Preprocessing :
-The first time OSM-PathFinder will handle an OSM file, it will extracts his data in order to
-use it. Also, the first time you will use the `--graphical` option, it will draw the map from
-the data it has extracted.
-This first treatments can be quite long due to the very large size of OpenStreetMap files, but
-they are only necessary once. The next times OSM-PathFinder will handle the same file, the processing
-should be very faster.
+The first time OSM-PathFinder will handle an OSM file, it will extracts his data in order
+to use it. Also, the first time you will use the `--graphical` option, it will draw the
+map from the data it has extracted.
+This first treatments can be quite long due to the very large size of OpenStreetMap files,
+but fortunately, they have to be computed only once. The next times OSM-PathFinder will
+handle the same file, the global processing should be drastically faster.
 
 The command line :
 ```
 $ ./osm_pathfinder -P -f <map>.osm
 ```
 will run all those pre-treatments separatly. It can be useful if you want to use the tool in a server
-application and reprocess the maps when they have been updated.
+application and only re-process the maps if they have been updated.
 
 ####Help :
 The command line :
 ```
 $ ./osm_pathfinder -h
 ```
-will prints you the usage of the programe.
+will prints you the usage of the software.
 
 
 ##_Exemples :_
@@ -159,7 +162,7 @@ will produce the following roadmap :
 ```
 $ ./osm_pathfinder --bicycle --distance --graphic myItinerary.jpg -f MapExemple/exemple.osm -c 48.6603/2.3774 48.6890/2.38233
 ```
-will produce the file myItinerary.jpg with this picture :
+will produce the file `myItinerary.jpg` with this picture :
 
 ![myItinerary](/images/myItinerary.jpg)
 
