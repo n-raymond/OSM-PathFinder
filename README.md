@@ -63,6 +63,7 @@ $ brew install gtk+
 ####Install packages
 ```
 $ opam install ocamlbuild lablgtk camlimages xml-light
+$ eval `opam config env`
 ```
 
 ####Compile the project
@@ -75,7 +76,7 @@ A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory
 
 ## How to use it
 
-*_Note_* : The following exemples will use an OpenStreetMap file not included in this repo in order to keep
+*_Note_* : The following examples will use an OpenStreetMap file not included in this repo in order to keep
 it light. If you want to do some tests on the same file and use exactly the same commands, you might
 clone that [repo](https://github.com/PixelSpirit/MapExemple) at the root of the project.
 
@@ -94,7 +95,7 @@ where :
      and longitude.
    - `-a <address1> <address2>` to select theme from addresses. _(Not implemented yet)_
 
-######_Exemple :_
+######_Example :_
 ```
 $ ./osm_pathfinder -f MapExemple/exemple.osm -c 48.6499/2.3648 48.6890/2.38233
 ```
@@ -149,7 +150,7 @@ $ ./osm_pathfinder -h
 will prints you the usage of the software.
 
 
-##_Exemples :_
+##_Examples :_
 
 ####1. _RoadMap Generation_ :
 ```
