@@ -8,7 +8,7 @@ _Nicolas Raymond / Nicolas Tortrat--Gentilhomme, 2014/2015_
 ##About the software
 
 The OpenStreetMap-PathFinder is a command line tool that allows you to compute itineraries
-for pedestrians, bicycles and motorized vehicules on maps coming from
+for pedestrians, bicycles and motorized vehicles on maps coming from
 [OpenStreetMap.org](https://www.openstreetmap.org/).
 
 OSM-Pathfinder can extract data from OSM files and display the path that you have requested
