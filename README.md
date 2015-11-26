@@ -66,6 +66,7 @@ $ opam install ocamlbuild lablgtk camlimages xml-light
 ```
 
 ####Compile the project
+Clone this repo at a desired place on your computer.
 A simple ` make ` in the root of the project will produce the runnable `osm_pathfinder`
 
 ####Generate documentation
