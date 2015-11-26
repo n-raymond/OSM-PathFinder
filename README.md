@@ -103,11 +103,11 @@ to the point of coordinates `48.6890/2.38233`.
 
 ####Itinerary Settings :
 
-######Set the vehicule :
-By setting the vehicule, OSM-PathFinder will compute the itinerary for the circulating form
+######Set the vehicle :
+By setting the vehicle, OSM-PathFinder will compute the itinerary for the circulating form
 you have chosen.
 You can use :
- - `--motorized` or `-m` for a motorized vehicule (car / motocycle) itinerary. _(default)_
+ - `--motorized` or `-m` for a motorized vehicle (car / motocycle) itinerary. _(default)_
  - `--bicycle` or `-b` for a bicycle itinerary.
  - `--pedestrian` or `-p` for a pedestrian itinerary.
  
