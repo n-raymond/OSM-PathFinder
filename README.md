@@ -78,7 +78,7 @@ A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory
 
 *_Note_* : The following examples will use an OpenStreetMap file not included in this repo in order to keep
 it light. If you want to do some tests on the same file and use exactly the same commands, you might
-clone that [repo](https://github.com/PixelSpirit/MapExemple) at the root of the project.
+clone that [repo](https://github.com/PixelSpirit/MapExample) at the root of the project.
 
 ####Basics
 To compute an itinerary, OSM-PathFinder must at least be used with the following command line :
@@ -97,9 +97,9 @@ where :
 
 ######_Example :_
 ```
-$ ./osm_pathfinder -f MapExemple/exemple.osm -c 48.6499/2.3648 48.6890/2.38233
+$ ./osm_pathfinder -f MapExample/example.osm -c 48.6499/2.3648 48.6890/2.38233
 ```
-will compute the itinerary on the map `MapExemple/exemple.osm` from the point of coordinates `48.6499/2.3648`
+will compute the itinerary on the map `MapExample/example.osm` from the point of coordinates `48.6499/2.3648`
 to the point of coordinates `48.6890/2.38233`.
 
 ####Itinerary Settings :
@@ -154,7 +154,7 @@ will prints you the usage of the software.
 
 ####1. _RoadMap Generation_ :
 ```
-$ ./osm_pathfinder --motorized --time --roadmap -f MapExemple/exemple.osm -c 48.6603/2.3774 48.6890/2.38233
+$ ./osm_pathfinder --motorized --time --roadmap -f MapExample/example.osm -c 48.6603/2.3774 48.6890/2.38233
 ```
 will produce the following roadmap :
 
