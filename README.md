@@ -162,7 +162,7 @@ will produce the following roadmap :
 
 ####2. _JPEG File Generation_ :
 ```
-$ ./osm_pathfinder --bicycle --distance --graphic myItinerary.jpg -f MapExemple/exemple.osm -c 48.6603/2.3774 48.6890/2.38233
+$ ./osm_pathfinder --bicycle --distance --graphic myItinerary.jpg -f MapExample/example.osm -c 48.6603/2.3774 48.6890/2.38233
 ```
 will produce the file `myItinerary.jpg` with this picture :
 
