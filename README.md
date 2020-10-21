@@ -5,7 +5,7 @@ _Nicolas Raymond / Nicolas Tortrat--Gentilhomme, 2014/2015_
 ![Preview](/images/Preview.jpg)
 
 
-##About the software
+## About the software
 
 The OpenStreetMap-PathFinder is a command line tool that allows you to compute itineraries
 for pedestrians, bicycles and motorized vehicles on maps coming from
@@ -19,7 +19,7 @@ in two different formats :
 This project is a study work realized by a team at the _University Paris Diderot, Paris 7_.
 
 
-##How to compile it
+## How to compile it
 
 OSM-PathFinder at least needs the `4.02.0` version of OCaml and uses different packages :
  - `xml-light`
@@ -29,14 +29,18 @@ OSM-PathFinder at least needs the `4.02.0` version of OCaml and uses different p
 
 The easiest way to install them is to use the OPAM package manager.
 
-####Install Ocaml and OPAM
-######On linux systems
+#### Install Ocaml and OPAM
+
+###### On linux systems
+
 ```
 $ sudo apt-get install opam
 $ opam init
 $ eval `opam config env`
 ```
-######On OSX
+
+###### On OSX
+
 Use [homebrew](http://brew.sh/).
 ```
 $ brew install Caskroom/cask/xquartz
@@ -48,29 +52,37 @@ $ eval `opam config env`
 *_Note_*: You will probably have to reboot your computer after these commands
 because of the installation of XQuartz.
 
-####Instal GTK+
+#### Instal GTK+
+
 The `lablgtk` and `camlimages` packages need a recent version of `gtk+`.
-######On linux systems
+
+###### On linux systems
+
 ```
 $ sudo apt-get install libgtk2.0-dev libjpeg-dev
 ```
-######On OSX
+
+###### On OSX
+
 ```
 $ brew install gtk+
 ```
 
 
-####Install packages
+#### Install packages
+
 ```
 $ opam install ocamlbuild lablgtk camlimages xml-light
 $ eval `opam config env`
 ```
 
-####Compile the project
+#### Compile the project
+
 Clone this repo at a desired place on your computer.
 A simple ` make ` in the root of the project will produce the runnable `osm_pathfinder`
 
-####Generate documentation
+#### Generate documentation
+
 A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory.
 
 
@@ -80,7 +92,8 @@ A ` make doc ` will generate an ocamldoc documentation in the `doc` subdirectory
 it light. If you want to do some tests on the same file and use exactly the same commands, you might
 clone that [repo](https://github.com/PixelSpirit/MapExample) at the root of the project.
 
-####Basics
+#### Basics
+
 To compute an itinerary, OSM-PathFinder must at least be used with the following command line :
 ```
 $ ./osm_pathfinder -f <map>.osm {starting and ending points}
@@ -95,16 +108,18 @@ where :
      and longitude.
    - `-a <address1> <address2>` to select theme from addresses. _(Not implemented yet)_
 
-######_Example :_
+###### _Example :_
+
 ```
 $ ./osm_pathfinder -f MapExample/example.osm -c 48.6499/2.3648 48.6890/2.38233
 ```
 will compute the itinerary on the map `MapExample/example.osm` from the point of coordinates `48.6499/2.3648`
 to the point of coordinates `48.6890/2.38233`.
 
-####Itinerary Settings :
+#### Itinerary Settings :
 
-######Set the vehicle :
+###### Set the vehicle :
+
 By setting the vehicle, OSM-PathFinder will compute the itinerary for the circulating form
 you have chosen.
 You can use :
@@ -112,13 +127,14 @@ You can use :
  - `--bicycle` or `-b` for a bicycle itinerary.
  - `--pedestrian` or `-p` for a pedestrian itinerary.
  
- 
-######Set the kind of itinerary :
+###### Set the kind of itinerary :
+
 Two kinds of itinerary are available :
  - `--distance` or `-d` will set the itinerary to be the shortest in distance. _(default)_
  - `--time` or `-t` will set the itinerary to be the shortest in time.
 
-######Set the display output :
+###### Set the display output :
+
 The itinerary can be displayed in two formats :
  - `--roadmap` or `-r` will print the itinerary as a roadmap, explaining you all the steps
    to travrel through it. _(default)_
@@ -127,7 +143,8 @@ The itinerary can be displayed in two formats :
    by a red line, the starting point by a green dot and the destination by a blue one. 
 
 
-####Preprocessing :
+#### Preprocessing :
+
 The first time OSM-PathFinder will handle an OSM file, it will extracts his data in order
 to use it. Also, the first time you will use the `--graphical` option, it will draw the
 map from the data it has extracted.
@@ -142,7 +159,8 @@ $ ./osm_pathfinder -P -f <map>.osm
 will run all those pre-treatments separatly. It can be useful if you want to use the tool in a server
 application and only re-process the maps if they have been updated.
 
-####Help :
+#### Help :
+
 The command line :
 ```
 $ ./osm_pathfinder -h
@@ -150,9 +168,10 @@ $ ./osm_pathfinder -h
 will prints you the usage of the software.
 
 
-##_Examples :_
+## _Examples :_
 
-####1. _RoadMap Generation_ :
+#### 1. _RoadMap Generation_ :
+
 ```
 $ ./osm_pathfinder --motorized --time --roadmap -f MapExample/example.osm -c 48.6603/2.3774 48.6890/2.38233
 ```
@@ -160,7 +179,8 @@ will produce the following roadmap :
 
 ![roadmap](/images/roadmap.png)
 
-####2. _JPEG File Generation_ :
+#### 2. _JPEG File Generation_ :
+
 ```
 $ ./osm_pathfinder --bicycle --distance --graphic myItinerary.jpg -f MapExample/example.osm -c 48.6603/2.3774 48.6890/2.38233
 ```
