@@ -58,6 +58,11 @@ and way =
 and bridge =
   | Bridge of bool
 
+
+
+(* M => Motorized
+   B => Bicicle
+   P => Pedestrian *)
 and highway =         (* [ M B P ] *)
   | HmotorWay         (* [ *     ] *)
   | Htrunk            (* [ * *   ] *)

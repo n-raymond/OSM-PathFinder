@@ -55,7 +55,6 @@ struct
           comparison n nid sd x y
         | `Pnode (PathNode ((x,y), _)) ->
           comparison n nid sd x y
-        | _ -> assert false (* By MapData *)
       end
       ) road (541., (NId "fst element which will be replace"))
       (* For the first element, have no over choice, but difflat max = 180

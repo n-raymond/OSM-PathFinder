@@ -67,9 +67,9 @@ doc: byte
 dist:
 	rm -fr $(PACKAGE)
 	mkdir $(PACKAGE)
-	  if test -f `cat distributed_files` then					
+	  if test -f `cat distributed_files` then
 	    cp -fr --parents `cat distributed_files` $(PACKAGE);
 	  else
 	    mkdir -p `cat distributed_files`
-	  fi;							
+	  fi;
 	tar cvfz $(PACKAGE).tar.gz $(PACKAGE)
